@@ -1,0 +1,12 @@
+{
+  "compatibility_date": "2026-11-05",
+  "name": "ace66space",
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./dist",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
