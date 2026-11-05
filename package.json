@@ -1,0 +1,9 @@
+{
+  "name": "ace66-space",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "preview": "node preview.mjs"
+  }
+}

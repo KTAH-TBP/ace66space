@@ -1,0 +1,5 @@
+# Replaced in dist by scripts/write-crawl-files.mjs.
+# Preview allows fetching so the noindex tag can be read. Production adds the sitemap line.
+
+User-agent: *
+Allow: /
