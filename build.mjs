@@ -104,14 +104,14 @@ const menu = '<nav class="primary" aria-label="Primary">' +
   dropdown("Casino", ["blackjack", "dragon-tiger", "sic-bo", "roulette", "baccarat"]) +
   dropdown("Others", ["rummy", "slots"]) +
   '<a href="/login/">Log In</a><a class="button" href="/register/">Sign Up</a></nav>';
-const header = reference.match(/<header class="site-header">[\s\S]*?<\/header>/)[0].replace(/<nav class="primary"[\s\S]*?<\/nav>/, menu);
+const header = reference.match(/<header class="site-header">[\s\S]*?<\/header>/)[0].replace(/<nav class="primary"[\s\S]*?<\/nav>/, menu).replace(/<div class="header-account">[\s\S]*?<\/div>/, "");
 const favicon = reference.match(/<link\b[^>]*rel="icon"[^>]*>/)?.[0];
 if (!favicon) throw Error("Homepage favicon missing");
 const styles = favicon + [...reference.matchAll(/<link\b[^>]*rel="stylesheet"[^>]*>/g)].map(m => m[0]).join("");
 const scripts = [...reference.matchAll(/<script\b[^>]*src="[^"]+"[^>]*><\/script>/g)].map(m => m[0]).join("");
 const footer = '<footer class="site-footer"><div class="wrap footer-grid"><div><strong>ACE66</strong><p>ACE66 is a Registered Trademark, brand and registered business regulated by The Philippine Amusement and Gaming Corporation (PAGCOR) and operates under the licenses of Offshore Gaming, and Electronic Gaming and Poker.</p><p>18+</p></div><div><h2 class="footer-label">Games</h2>' + links(guides) + '</div><div><h2 class="footer-label">Pages</h2>' + links(support) + '</div></div></footer>';
 let homepage = reference.replace(/<header class="site-header">[\s\S]*?<\/header>/, header)
-  .replace(/<footer\b[\s\S]*?<\/footer>/, footer);
+  .replace(/<footer\b[\s\S]*?<\/footer>/, footer).replace("</head>", '<link rel="stylesheet" href="/space.css"></head>');
 const known = new Set(pages.map(url));
 homepage = homepage.replace(/href="(\/[^"#?]*)"/g, (match, href) => {
   if (known.has(href) || /\.[a-z0-9]+$/i.test(href)) return match;

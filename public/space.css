@@ -65,3 +65,14 @@
 
 .space-hero img.hero-landscape { height: clamp(220px, 24vw, 300px); object-fit: cover; object-position: 75% center; border-radius: 12px; }
 @media(max-width:850px) { .space-hero img.hero-landscape { height: clamp(190px, 42vw, 280px); } }
+
+.site-header .header-inner { flex-wrap: nowrap; min-height:76px; }
+.site-header .brand img { width:132px; }
+.space-hero > div { min-width:0; }
+.space-hero h1 { font-size:clamp(1.9rem,3vw,2.65rem); line-height:1.18; max-width:none; overflow-wrap:normal; }
+body.home .hero-copy { width:min(840px,calc(100% - 40px)); }
+body.home .hero-copy h1 { font-size:clamp(2.2rem,4vw,3.5rem); line-height:1.14; }
+body.home .hero-copy .lede {max-width:730px;font-size:1.05rem;line-height:1.65;}
+@media(min-width:1040px){.site-header .primary{gap:8px;flex-wrap:nowrap}.site-header .primary > a,.site-header .primary > details > summary{font-size:.92rem;white-space:nowrap}}
+@media(max-width:1039px){.site-header .header-inner{flex-wrap:wrap}.site-header .primary{width:100%}}
+@media(max-width:600px){.space-hero h1{font-size:1.9rem;line-height:1.2}body.home .hero-copy h1{font-size:2.25rem}body.home .hero-copy .lede{font-size:1rem}body.home .hero{min-height:calc(100svh - 76px);height:auto;padding-block:36px}}
